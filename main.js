@@ -34,6 +34,7 @@ function getNumber() {
 }
 
 const arrayGenerata = getNumber()
+console.log(arrayGenerata);
 
 //Visualizzare i numeri nella pagina.
 document.getElementById('numeri').innerHTML = arrayGenerata;
@@ -61,14 +62,17 @@ function getAll() {
         //Inserisco i numeri digitati dall'utente e li inserisco nell'array;
         arrayUserNumbers.push(userNumber);
         //console.log(arrayUserNumbers);
-    }
 
-    const arrayConfronto = [];
 
-    if (arrayUserNumbers === arrayGenerata) {
-        arrayConfronto.push(arrayUtente)
-        console.log(`Questi sono i numeri che hai trovato ${arrayConfronto.length}, ovvero: ${arrayConfronto}`);
-    } else {
-        console.log('Non hai trovato nessun numero');
+        console.log(arrayUserNumbers);
+
+        const arrayConfronto = [];
+
+        if (arrayUserNumbers === arrayGenerata) {
+            arrayConfronto.push(userNumber)
+            document.getElementById('risultato').innerHTML = (`Questi sono i numeri che hai trovato ${arrayConfronto.length}, ovvero: ${arrayConfronto}`);
+        } else {
+            document.getElementById('risultato').innerHTML = ('Non hai trovato nessun numero');
+        }
     }
 }
