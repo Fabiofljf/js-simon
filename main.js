@@ -76,15 +76,15 @@ function getArrayUserNumbers() {
 const arrayUtente = getArrayUserNumbers(); // - Array (numeri scelti dell'utente) salvata e riutilizzabile.
 //console.log(arrayUtente);
 
-// //QUINTO PASSO - identificare quanti e quali dei numeri da indovinare sono stati individuati.
-// //Confrontare le due arrey
 
-//Array di confronto tra l'array del pc e quella dell'utente.
+
+// //QUINTO PASSO - identificare quanti e quali dei numeri da indovinare sono stati individuati.
+// //Confrontare le due arrey. Array di confronto tra l'array del pc e quella dell'utente.
 const arrayConfronto = [];
 
 if (arrayUtente === arrayGenerata) {
     arrayConfronto.push(arrayUtente)
-    console.log(`Questi sono i numeri che hai trovato ${arrayConfronto}`);
+    console.log(`Questi sono i numeri che hai trovato ${arrayConfronto.length}, ovvero: ${arrayConfronto}`);
 } else {
     console.log('Non hai trovato nessun numero');
 }
