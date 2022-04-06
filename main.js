@@ -36,7 +36,7 @@ function getNumbersForArray() {
     return arrayRandomNumbers
 }
 //console.log(getNumbersForArray()); // - Array piena.
-const arrayGenerata = getNumbersForArray(); // - Array salvata e riutilizzabile.
+const arrayGenerata = getNumbersForArray(); // - Array (numeri scelti dal pc) salvata e riutilizzabile.
 //console.log(arrayGenerata);
 
 
@@ -47,15 +47,16 @@ document.getElementById('numeri').innerHTML = arrayGenerata;
 
 
 // //TERZO PASSO - Sviluppare la funzione Asincrona per vedere i numeri per 30s.
-// setTimeout(function() {
-//     document.getElementById('numeri').style.display = 'none';
-// }, 3000)
+setTimeout(function() {
+    document.getElementById('numeri').style.display = 'none';
+}, 3000)
 
 
 
 // //QUARTO PASSO - Chiedere all'utente di inserire i numeri visti in precedenza.
-setTimeout(function getArrayUserNumbers() {
+setTimeout(getArrayUserNumbers, 4000)
 
+function getArrayUserNumbers() {
     //Arrey dell'utente
     const arrayUserNumbers = [];
     //console.log(arrayUserNumbers); - Array vuota.
@@ -66,16 +67,24 @@ setTimeout(function getArrayUserNumbers() {
 
         //Inserisco i numeri digitati dall'utente e li inserisco nell'array.
         arrayUserNumbers.push(userNumber)
-        console.log(arrayUserNumbers);
+            //console.log(arrayUserNumbers);
     }
     return arrayUserNumbers
-}, 3500)
+}
 
-console.log(getArrayUserNumbers()); //- Array con i numeri digitati dall'utente.
+//console.log(getArrayUserNumbers()); //- Array con i numeri digitati dall'utente.
+const arrayUtente = getArrayUserNumbers(); // - Array (numeri scelti dell'utente) salvata e riutilizzabile.
+//console.log(arrayUtente);
 
 // //QUINTO PASSO - identificare quanti e quali dei numeri da indovinare sono stati individuati.
 // //Confrontare le due arrey
 
-//Richiamo array generata.
-// const randomNumber = arrayGenerata;
-// console.log(randomNumber);
+//Array di confronto tra l'array del pc e quella dell'utente.
+const arrayConfronto = [];
+
+if (arrayUtente === arrayGenerata) {
+    arrayConfronto.push(arrayUtente)
+    console.log(`Questi sono i numeri che hai trovato ${arrayConfronto}`);
+} else {
+    console.log('Non hai trovato nessun numero');
+}
