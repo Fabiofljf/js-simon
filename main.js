@@ -35,45 +35,47 @@ function getNumbersForArray() {
     }
     return arrayRandomNumbers
 }
-console.log(getNumbersForArray()); //- Array piena.
+//console.log(getNumbersForArray()); // - Array piena.
+const arrayGenerata = getNumbersForArray(); // - Array salvata e riutilizzabile.
+//console.log(arrayGenerata);
 
 
 
 //SECONDO PASSO - Visualizzare i numeri nella pagina.
-document.getElementById('numeri').innerHTML = getNumbersForArray();
+document.getElementById('numeri').innerHTML = arrayGenerata;
 
 
 
-//TERZO PASSO - Sviluppare la funzione Asincrona per vedere i numeri per 30s.
-setTimeout(function() {
-    document.getElementById('numeri').style.display = 'none';
-}, 3000)
+// //TERZO PASSO - Sviluppare la funzione Asincrona per vedere i numeri per 30s.
+// setTimeout(function() {
+//     document.getElementById('numeri').style.display = 'none';
+// }, 3000)
 
 
 
-//QUARTO PASSO - Chiedere all'utente di inserire i numeri visti in precedenza.
+// //QUARTO PASSO - Chiedere all'utente di inserire i numeri visti in precedenza.
 setTimeout(function getArrayUserNumbers() {
 
     //Arrey dell'utente
     const arrayUserNumbers = [];
     //console.log(arrayUserNumbers); - Array vuota.
 
-    //Richiamo array generata.
-    const randomNumber = getNumbersForArray();
-    console.log(randomNumber);
-
     for (i = 1; i <= 5; i++) {
-        const userNumber = parseInt(prompt(`Inserisci il ${i} numero`))
-        console.log(userNumber); //- Numeri digitati dall'utente.
-
+        const userNumber = parseInt(prompt(`Inserisci il ${i} numero`));
+        //console.log(userNumber); //- Numeri digitati dall'utente.
 
         //Inserisco i numeri digitati dall'utente e li inserisco nell'array.
         arrayUserNumbers.push(userNumber)
+        console.log(arrayUserNumbers);
     }
     return arrayUserNumbers
 }, 3500)
 
 console.log(getArrayUserNumbers()); //- Array con i numeri digitati dall'utente.
 
-//QUINTO PASSO - identificare quanti e quali dei numeri da indovinare sono stati individuati.
-//Confrontare le due arrey
+// //QUINTO PASSO - identificare quanti e quali dei numeri da indovinare sono stati individuati.
+// //Confrontare le due arrey
+
+//Richiamo array generata.
+// const randomNumber = arrayGenerata;
+// console.log(randomNumber);
